@@ -1,0 +1,91 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Usuarios</h2>
+    <p>Seleccione para ver, editar o agregar a un usuario</p>
+    <p>Para agregar un usuario presione el boton verde</p>
+    <p>Para editar un usuario presione el boton amarillo</p>
+    <p>Para eliminar un usuario presione el boton rojo</p>
+
+    <div class="row">
+        <div style="float:right">
+            @Html.ActionLink("+", "Form", "Usuario", htmlAttributes: new { @class = "btn btn-success" })
+        </div>
+    </div>
+
+    <hr />
+    <div class="row">
+
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th class="hidden">Matricula</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Paterno</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Genero</th>
+                    <th>Email</th>
+                    @*<th>Password</th>*@
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                    <th>CURP</th>
+                    <th>UserName</th>
+                    <th>Rol</th>
+                    <th>Calle</th>
+                    <th>NumeroInterior</th>
+                    <th>NumeroExterior</th>
+                    <th>Colonia</th>
+                    <th>Municipio</th>
+                    <th>Estado</th>
+                    <th>Pais</th>
+                    <th>Eliminar</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (ML.Usuario usuario in Model.Usuarios)
+                {
+                    <tr>
+                        <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Usuario", new { Matricula = usuario.Matricula})"></a></td>
+                        <td class="hidden">@usuario.Matricula</td>
+                        <td>@usuario.Nombre</td>
+                        <td>@usuario.ApellidoPaterno</td>
+                        <td>@usuario.ApellidoMaterno</td>
+                        <td>@usuario.FechaNacimiento</td>
+                        <td>@usuario.Genero</td>
+                        <td>@usuario.Email</td>
+                        @*<td>@usuario.Password</td>*@
+                        <td>@usuario.Telefono</td>
+                        <td>@usuario.Celular</td>
+                        <td>@usuario.CURP</td>
+                        <td>@usuario.UserName</td>
+                        <td class="hidden">@usuario.Rol.IdRol</td>
+                        <td>@usuario.Rol.Nombre</td>
+                        <td>@usuario.Direccion.Calle</td>
+                        <td>@usuario.Direccion.NumeroInterior</td>
+                        <td>@usuario.Direccion.NumeroExterior</td>
+                        <td class="hidden">@usuario.Direccion.Colonia.IdColonia</td>
+                        <td>@usuario.Direccion.Colonia.Nombre</td>
+                        <td class="hidden">@usuario.Direccion.Colonia.Municipio.IdMunicipio</td>
+                        <td>@usuario.Direccion.Colonia.Municipio.Nombre</td>
+                        <td class="hidden">@usuario.Direccion.Colonia.Municipio.Estado.IdEstado</td>
+                        <td>@usuario.Direccion.Colonia.Municipio.Estado.Nombre</td>
+                        <td class="hidden">@usuario.Direccion.Colonia.Municipio.Estado.Pais</td>
+                        <td>@usuario.Direccion.Colonia.Municipio.Estado.Pais.Nombre</td>
+
+                        <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Usuario", new { Matricula = usuario.Matricula})" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89e9ea0fa1744d9badd0a0eae281720c" Name="Diagram1">
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Rol" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Area" Width="1.5" PointX="10.625" PointY="0.625" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Departamento" Width="1.5" PointX="8.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.sysdiagram" Width="1.5" PointX="0.75" PointY="5.75" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Departame__IdAre__45F365D3" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Colonia" Width="1.5" PointX="10.125" PointY="6.125" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Estado" Width="1.5" PointX="5.625" PointY="6.25" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Municipio" Width="1.5" PointX="7.875" PointY="6.25" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Pais" Width="1.5" PointX="3.375" PointY="6.375" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Colonia__IdMunic__6A30C649" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Estado__IdPais__6477ECF3" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Municipio__IdEst__6754599E" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Usuario__IdRol__24927208" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Direccion" Width="1.5" PointX="6.625" PointY="3" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Direccion__IdCol__6D0D32F4" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Direccion__Matri__6E01572D" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.MetodoPago" Width="1.5" PointX="6.125" PointY="1.25" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Producto" Width="1.5" PointX="13.625" PointY="0.5" />
+        <EntityTypeShape EntityType="JCorrienteProgramacionNCapasModel.Proveedor" Width="1.5" PointX="11.375" PointY="9.75" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Producto__IdArea__0A9D95DB" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Producto__IdDepa__07C12930" />
+        <AssociationConnector Association="JCorrienteProgramacionNCapasModel.FK__Producto__IdProv__06CD04F7" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
